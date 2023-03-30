@@ -26,9 +26,9 @@ Route::get('/sobre-nos', [$rotaControllers.SobreNosController::class, 'sobreNos'
 Route::get('/contato', [$rotaControllers.ContatoController::class, 'contato'])->name('site.contato');
 Route::get('/login', function() { return 'login';})->name('site.login');
 
+Route::get('/app/fornecedores', [$rotaControllers.FornecedorController::class, 'index'])->name('app.fornecedores');
 Route::prefix('/app')->group( function() {
     Route::get('/clientes', function() { return 'clientes';})->name('app.clientes');
-    Route::get('/fornecedores', [$rotaControllers.FornecedorController::class, 'index'])->name('app.fornecedores');
     Route::get('/produtos', function() { return 'produtos';})->name('site.produtos');
 });
 
